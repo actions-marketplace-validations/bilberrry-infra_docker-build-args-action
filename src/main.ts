@@ -24,7 +24,8 @@ async function run(): Promise<void> {
 
     builArgs.push(...extraArgs)
 
-    core.setOutput('args', builArgs)
+    core.info(builArgs.join('\n'))
+    core.setOutput('args', builArgs.join('\n'))
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }
